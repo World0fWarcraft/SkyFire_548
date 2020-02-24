@@ -103,6 +103,7 @@ enum ExpansionFlags
 
 struct RealmBuildInfo
 {
+    RealmBuildInfo() : Build(0), MajorVersion(0), MinorVersion(0), BugfixVersion(0), HotfixVersion(0) { }
     int Build;
     int MajorVersion;
     int MinorVersion;
