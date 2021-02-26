@@ -5424,6 +5424,23 @@ void AuraEffect::HandlePeriodicTriggerSpellAuraTick(Unit* target, Unit* caster) 
                 }
                 break;
             }
+            case SPELLFAMILY_MAGE:
+            {
+                switch (auraId)
+                {
+                    // Ring of Frost
+                    case 136511: 
+                    {
+                        if (target->HasAura(95910))
+                            return;
+
+                        target->CastSpell(target, 95910, true);
+                        target->CastSpell(target, 82691, true);
+                        return;
+                    }
+                }
+                break;
+            }
             case SPELLFAMILY_SHAMAN:
             {
                 switch (auraId)
